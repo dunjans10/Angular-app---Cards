@@ -1,0 +1,12 @@
+<div *ngIf="text.length > maxTextSize">
+    <p *ngIf="toShowMore">
+        {{showText}}
+        <a class="link" (click)="toggleShow()">Show less</a>
+    </p>
+    <p *ngIf="!toShowMore">
+        {{showText}}
+        <a class="link" (click)="toggleShow()">Show more</a>
+    </p>
+
+</div>
+<p *ngIf="text.length <= maxTextSize">{{text}}</p>

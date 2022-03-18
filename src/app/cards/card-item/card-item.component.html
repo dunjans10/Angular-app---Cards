@@ -1,0 +1,25 @@
+<br>
+<br>
+<div class="row">
+    <div class="col-4">
+        <img src="{{card.image}}" alt="card_image">
+    </div>
+    <div class="col-8">
+        <a class="link" (click)="showComments()">{{card.title}}</a>
+        <p>{{card.subtitle}}</p>
+        <div class="row">
+            <div class="col">
+                <gra-show-more [text]="card.description" [maxTextSize]="100"></gra-show-more>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4 offset-10">
+        <button class="btn btn-success" (click)="changeGrade(card.grade+1)">+</button>
+        {{card.grade}}
+        <button class="btn btn-danger" (click)="changeGrade(card.grade-1)">-</button>
+
+    </div>
+</div>

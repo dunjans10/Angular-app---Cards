@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col">
+        <form>
+            <div class="mb-3">
+              
+              <input type="text" class="form-control" name="nameInput" placeholder="Enter your name" [(ngModel)]="newComment.author">
+             
+            </div>
+            <div class="mb-3">
+                <textarea name="commentInput" cols="45" rows="5" placeholder="Comment" [(ngModel)]="newComment.text"></textarea>
+            </div>
+           
+            <button type="submit" class="btn btn-primary" (click)="postComment()">Submit</button>
+          </form>
+    </div>
+</div>
+<br>
+<br>
+<div class="row" *ngFor="let comment of comments">
+    <div class="col-8">
+        <b>{{comment.author}}</b>
+
+    </div>
+    <div class="col-4">
+        {{comment.date | date}}
+    </div>
+
+    <div class="col">
+        {{comment.text}}
+        <br>
+        <br> 
+    </div>
+</div>
+
+

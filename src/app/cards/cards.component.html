@@ -1,0 +1,32 @@
+<br>
+<br>
+<div class="row">
+    <div class="col-8">
+        <div class="row">
+            <div class="col-4">
+        
+                <gra-pagination [page]="params.page" [pageSize]="params.pageSize" [collectionSize]="cards.count" (pageChange)="onPageChange($event)"></gra-pagination>
+        
+            </div>
+        
+            <div class="col-8">
+        
+                <button class="btn btn-secondary" (click)="changePageSize(4)">4</button>
+                <button class="btn btn-secondary" (click)="changePageSize(8)">8</button>
+                <button class="btn btn-secondary" (click)="changePageSize(12)">12</button>
+        
+            </div>
+        
+        </div>
+        
+        
+        <br>
+        
+        <gra-card-item *ngFor="let card of cards.results" [card]="card" (cardClicked)="selectedCardId=card._id"></gra-card-item>
+
+    </div>
+
+    <div class="col-4">
+        <gra-card-comments [cardId]="selectedCardId" *ngIf="selectedCardId >= 0"></gra-card-comments>
+    </div>
+</div>
